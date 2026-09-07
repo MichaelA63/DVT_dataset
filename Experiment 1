@@ -1,0 +1,287 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Analytics Lab\n",
+        "\n",
+        "## Experiment 1\n",
+        "\n",
+        "### Setting Up Python Environment and Libraries – Jupyter Notebook\n",
+        "\n",
+        "**Dataset:** IPL Ball-by-Ball Dataset  \n",
+        "**Source:** Kaggle"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Aim\n",
+        "\n",
+        "To configure the Python environment and Jupyter Notebook, execute Python programs, create Markdown cells, and demonstrate NumPy, Pandas, and Matplotlib using IPL data."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Software Requirements\n",
+        "\n",
+        "- Python 3.11 or above\n",
+        "- Jupyter Notebook\n",
+        "- Anaconda Distribution (Optional)\n",
+        "- Web Browser\n",
+        "- NumPy\n",
+        "- Pandas\n",
+        "- Matplotlib"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Theory\n",
+        "\n",
+        "Python is a high-level, interpreted programming language widely used in Data Analytics, Machine Learning, Artificial Intelligence, Scientific Computing, and Data Visualization.\n",
+        "\n",
+        "Jupyter Notebook is an interactive computing environment that supports live code, visualizations, and Markdown documentation in a single notebook."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import sys\n",
+        "\n",
+        "print(\"Python Version:\", sys.version)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "print(\"Welcome to IPL Data Analytics Lab\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "a = 20\n",
+        "b = 10\n",
+        "\n",
+        "print(\"Addition =\", a + b)\n",
+        "print(\"Subtraction =\", a - b)\n",
+        "print(\"Multiplication =\", a * b)\n",
+        "print(\"Division =\", a / b)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "dataset_name = \"IPL Ball-by-Ball Dataset\"\n",
+        "sport = \"Cricket\"\n",
+        "competition = \"Indian Premier League\"\n",
+        "data_source = \"Kaggle\"\n",
+        "\n",
+        "print(\"Dataset:\", dataset_name)\n",
+        "print(\"Sport:\", sport)\n",
+        "print(\"Competition:\", competition)\n",
+        "print(\"Source:\", data_source)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "runs = np.array([10, 20, 30, 40, 50])\n",
+        "\n",
+        "print(\"Runs:\", runs)\n",
+        "print(\"Mean Runs =\", np.mean(runs))\n",
+        "print(\"Total Runs =\", np.sum(runs))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "print(\"Pandas Version:\", pd.__version__)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Loading the IPL Dataset\n",
+        "\n",
+        "Place `matches.csv` and `deliveries.csv` in the same folder as this notebook before running the following cell."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "matches = pd.read_csv(\"matches.csv\")\n",
+        "deliveries = pd.read_csv(\"deliveries.csv\")\n",
+        "\n",
+        "print(\"Matches Dataset Loaded Successfully\")\n",
+        "print(\"Deliveries Dataset Loaded Successfully\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "print(\"First five rows of Matches dataset:\")\n",
+        "display(matches.head())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "print(\"First five rows of Deliveries dataset:\")\n",
+        "display(deliveries.head())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "print(\"Matches Dataset Shape:\", matches.shape)\n",
+        "print(\"Deliveries Dataset Shape:\", deliveries.shape)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "data = {\n",
+        "    \"Player\": [\"Virat Kohli\", \"Rohit Sharma\", \"MS Dhoni\"],\n",
+        "    \"Runs\": [7263, 6628, 5121]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "seasons = [2019, 2020, 2021, 2022, 2023]\n",
+        "runs = [200, 250, 220, 300, 280]\n",
+        "\n",
+        "plt.plot(seasons, runs, marker=\"o\")\n",
+        "plt.title(\"Sample IPL Runs by Season\")\n",
+        "plt.xlabel(\"Season\")\n",
+        "plt.ylabel(\"Runs\")\n",
+        "plt.show()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "print(\"NumPy imported successfully\")\n",
+        "print(\"Pandas imported successfully\")\n",
+        "print(\"Matplotlib imported successfully\")\n",
+        "print(\"IPL datasets loaded successfully\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Result\n",
+        "\n",
+        "Thus, the Python environment and Jupyter Notebook were successfully configured. Python programs were executed and Markdown cells were created. NumPy, Pandas, and Matplotlib libraries were successfully imported and demonstrated using IPL dataset examples."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Viva Questions\n",
+        "\n",
+        "1. **What is Python?**  \n",
+        "   Python is a high-level programming language used for analytics and AI.\n",
+        "\n",
+        "2. **What is Jupyter Notebook?**  \n",
+        "   An interactive environment for coding and documentation.\n",
+        "\n",
+        "3. **What is a Kernel?**  \n",
+        "   A computational engine that executes notebook code.\n",
+        "\n",
+        "4. **What is Markdown?**  \n",
+        "   A lightweight markup language used for formatting text.\n",
+        "\n",
+        "5. **What is NumPy?**  \n",
+        "   A Python library used for numerical computing.\n",
+        "\n",
+        "6. **What is Pandas?**  \n",
+        "   A Python library used for data manipulation and analysis.\n",
+        "\n",
+        "7. **What is Matplotlib?**  \n",
+        "   A Python library used for data visualization.\n",
+        "\n",
+        "8. **What is the shortcut to execute a cell?**  \n",
+        "   Shift + Enter.\n",
+        "\n",
+        "9. **Why is Jupyter popular in Data Analytics?**  \n",
+        "   It supports code, visualization, and documentation in a single environment.\n",
+        "\n",
+        "10. **What is the extension of a notebook file?**  \n",
+        "    `.ipynb`"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.11"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
